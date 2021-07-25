@@ -1,5 +1,5 @@
 const textConfig = {
-  text1: "Gửi người con gái anh yêu",
+  text1: "Gửi người con gái anh thương",
   text2: "Anh có vài điều muốn nói với em, mong rằng em sẽ đọc hết những tâm tư suy nghĩ này của anh",
   text3: "Anh yêu em nhiều lắm",
   text4: "Anh xin lỗi vì tất cả",
@@ -35,9 +35,9 @@ $(document).ready(function () {
     Swal.fire({
       title: textConfig.text1,
       text: textConfig.text2,
-      imageUrl: "img/cuteCat.jpg",
+      imageUrl: "img/hanh.jpg",
       imageWidth: 300,
-      imageHeight: 300,
+      imageHeight: 400,
       background: '#fff url("img/iput-bg.jpg")',
       imageAlt: "Custom image",
     }).then(function () {
