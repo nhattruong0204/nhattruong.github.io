@@ -1,8 +1,8 @@
 const textConfig = {
-  text1: "He luu cậu!",
-  text2: "Tớ có điều này muốn hỏi cậu nhớ phải trả lời thật lòng nhaaa.",
-  text3: "Cậu yêu tớ có phải không nào ._.",
-  text4: "Nếu cậu ko trả lời mà thoát ra tức là muốn làm vợ tớ rùi đó nha :v",
+  text1: "Gửi người con gái anh yêu",
+  text2: "Anh có vài điều muốn nói với em, mong rằng em sẽ đọc hết những tâm tư suy nghĩ này của anh",
+  text3: "Anh yêu em nhiều lắm",
+  text4: "Anh xin lỗi vì tất cả",
   text5: "Cậu mơ à???",
   text6: "Yêu ơi là yêu <3",
   text7: "lí do cậu thích tớ đi :vvvv",
@@ -41,39 +41,41 @@ $(document).ready(function () {
       background: '#fff url("img/iput-bg.jpg")',
       imageAlt: "Custom image",
     }).then(function () {
+      var audio = new Audio("sound/BinhYenNoiDau-M-TP_452gz.mp3");
+      audio.play();
       $(".content").show(200);
     });
   }
 
   // switch button position
-  function switchButton() {
-    var audio = new Audio("sound/duck.mp3");
-    audio.play();
-    var leftNo = $("#no").css("left");
-    var topNO = $("#no").css("top");
-    var leftY = $("#yes").css("left");
-    var topY = $("#yes").css("top");
-    $("#no").css("left", leftY);
-    $("#no").css("top", topY);
-    $("#yes").css("left", leftNo);
-    $("#yes").css("top", topNO);
-  }
+  // function switchButton() {
+  //   var audio = new Audio("sound/duck.mp3");
+  //   audio.play();
+  //   var leftNo = $("#no").css("left");
+  //   var topNO = $("#no").css("top");
+  //   var leftY = $("#yes").css("left");
+  //   var topY = $("#yes").css("top");
+  //   $("#no").css("left", leftY);
+  //   $("#no").css("top", topY);
+  //   $("#yes").css("left", leftNo);
+  //   $("#yes").css("top", topNO);
+  // }
   // move random button póition
-  function moveButton() {
-    var audio = new Audio("sound/Swish1.mp3");
-    audio.play();
-    if (screen.width <= 600) {
-      var x = Math.random() * 300;
-      var y = Math.random() * 500;
-    } else {
-      var x = Math.random() * 500;
-      var y = Math.random() * 500;
-    }
-    var left = x + "px";
-    var top = y + "px";
-    $("#no").css("left", left);
-    $("#no").css("top", top);
-  }
+  // function moveButton() {
+  //   var audio = new Audio("sound/Swish1.mp3");
+  //   audio.play();
+  //   if (screen.width <= 600) {
+  //     var x = Math.random() * 300;
+  //     var y = Math.random() * 500;
+  //   } else {
+  //     var x = Math.random() * 500;
+  //     var y = Math.random() * 500;
+  //   }
+  //   var left = x + "px";
+  //   var top = y + "px";
+  //   $("#no").css("left", left);
+  //   $("#no").css("top", top);
+  // }
 
   var n = 0;
   $("#no").mousemove(function () {
@@ -86,24 +88,24 @@ $(document).ready(function () {
   });
 
   // generate text in input
-  function textGenerate() {
-    var n = "";
-    var text = " " + textConfig.text9;
-    var a = Array.from(text);
-    var textVal = $("#txtReason").val() ? $("#txtReason").val() : "";
-    var count = textVal.length;
-    if (count > 0) {
-      for (let i = 1; i <= count; i++) {
-        n = n + a[i];
-        if (i == text.length + 1) {
-          $("#txtReason").val("");
-          n = "";
-          break;
-        }
-      }
-    }
-    $("#txtReason").val(n);
-  }
+  // function textGenerate() {
+  //   var n = "";
+  //   var text = " " + textConfig.text9;
+  //   var a = Array.from(text);
+  //   var textVal = $("#txtReason").val() ? $("#txtReason").val() : "";
+  //   var count = textVal.length;
+  //   if (count > 0) {
+  //     for (let i = 1; i <= count; i++) {
+  //       n = n + a[i];
+  //       if (i == text.length + 1) {
+  //         $("#txtReason").val("");
+  //         n = "";
+  //         break;
+  //       }
+  //     }
+  //   }
+  //   $("#txtReason").val(n);
+  // }
 
   // show popup
   $("#yes").click(function () {
@@ -148,9 +150,9 @@ $(document).ready(function () {
       var handleWriteText = setInterval(function () {
         textGenerate();
       }, 10);
-      $("#txtReason").blur(function () {
-        clearInterval(handleWriteText);
-      });
+      // $("#txtReason").blur(function () {
+      //   clearInterval(handleWriteText);
+      // });
     });
   });
 });
